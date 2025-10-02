@@ -21,7 +21,7 @@ function alreadyInitialized() {
 }
 
 // Copy template component with overwrite prompt
-async function copyTemplate(fileName, destFolder = "components/ui") {
+async function copyTemplate(fileName, destFolder = "components/simple-ui") {
   const src = path.join(__dirname, "../templates", `${fileName}.tsx`);
   if (!existsSync(src)) {
     console.error(`❌ Component "${fileName}" not found in templates`);
@@ -217,7 +217,7 @@ async function main() {
       const config = {
         tailwindCSS: "app/globals.css",
         aliases: {
-          ui: "@/components/ui",
+          ui: "@/components/simple-ui",
           lib: "@/lib",
           hooks: "@/hooks"
         },
